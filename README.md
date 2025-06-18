@@ -68,6 +68,7 @@ Accede al contenedor de ollama `Containers/rag_local-ollama-1` y ejecutar los co
 <img style="width:100%; height:100%;" src="https://raw.githubusercontent.com/YonierGM/imagenes-proyecto/refs/heads/master/Contenedor.png?raw=true"/>
 </p>
 
+![Contenedor-ollama](images/Contenedor.png)
 
 Comandos:
 ```bash
