@@ -7,21 +7,30 @@ Este proyecto implementa una API local de Recuperación Aumentada por Generació
 - 🦙 **Ollama** para correr modelos LLM y de embeddings localmente
 - 🧠 **ChromaDB** como base vectorial para recuperación semántica
 - 🐳 **Docker Compose** para contenerizar todo
+- 🌐 **Redis** para almacenamiento temporal del historial de conversación.
 
 ## 🐳 Requisitos previos
-
 - [Docker](https://www.docker.com/)
 ---
 
+## 🚀 Funcionalidades principales
 
-## 🚀 ¿Qué hace este proyecto?
+✅ Ingesta de documentos (.pdf, .docx, .txt)
+✅ Fragmentación automática de texto (con RecursiveCharacterTextSplitter)
+✅ Indexación en base vectorial con embeddings (mxbai-embed-large)
+✅ Recuperación contextual con búsqueda MMR
+✅ Generación de respuestas enriquecidas con contexto y memoria
+✅ Soporte multi-modelo: puedes elegir entre distintos modelos Ollama
+✅ Endpoints para listar, resetear y gestionar historial
+✅ Documentación automática con Swagger UI
 
-1. ✅ Permite subir documentos para extraer su contenido y almacenarlo como embeddings usando `mxbai-embed-large`.
-2. 🔍 Usa `LangChain` con `Chroma` como base vectorial persistente para consultas semánticas.
-3. 🤖 Usa modelos LLM locales como `llama3` mediante **Ollama** para responder preguntas.
-4. 🧩 Implementa `chat history`, re-ingesta, y control de errores con archivos corruptos o no extraíbles.
-5. 🧾 La interfaz en React permite interactuar con la IA como un chat.
-
+## Endpoints principales
+- `POST /ingest`: Subida y fragmentación de documentos
+- `POST /ask_model`: Consulta a un modelo con contexto y memoria
+- `GET /models`: Lista los modelos de chat disponibles en Ollama
+- `GET /history`: Obtiene el historial de conversación
+- `POST /clearHistory`: Elimina el historial
+- `DELETE /reset_embeddings`: Elimina la base vectorial completa
 
 ## ⚙️ Tecnologías principales
 
@@ -34,22 +43,13 @@ Este proyecto implementa una API local de Recuperación Aumentada por Generació
 ---
 
 
-### 📂 Funcionalidades del Backend (FastAPI)
-- `POST /ingest`: Ingresa documentos (PDF, DOCX, TXT). Maneja errores comunes.
-- `POST /ask_model`: Consulta al modelo con una pregunta y contexto extraído de los documentos.
-- `DELETE /reset_embeddings`: Limpia toda la base de datos vectorial para nuevas ingestiones.
-- 
----
-
-
-
 ## 🚀 Paso a paso para levantar el proyecto
 
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/YonierGM/RAG_LOCAL
-cd RAG_LOCAL
+git clone https://github.com/YonierGM/ollama-rag-chat
+cd ollama-rag-chat
 ```
 
 ### 2. Construir contenedores y levantar proyecto
@@ -61,13 +61,9 @@ docker compose up --build
 - Modelo de embeddings `mxbai-embed-large`
 - modelo LLM `llama3.2`
 
-Accede al contenedor de ollama `Containers/rag_local-ollama-1` y ejecutar los comandos:
+Accede al contenedor de ollama `Containers/ollama-ai` y ejecutar los comandos:
 
 ### Referencia
-<p align="center">
-<img style="width:100%; height:100%;" src="https://raw.githubusercontent.com/YonierGM/imagenes-proyecto/refs/heads/master/Contenedor.png?raw=true"/>
-</p>
-
 ![Contenedor-ollama](images/Contenedor.png)
 
 Comandos:
@@ -79,12 +75,8 @@ ollama run llama3.2
 Una vez que hayas instalado los modelos de embeddings y LLM, puedes elegir cuál utilizar desde el selector ubicado en la esquina inferior izquierda de la interfaz. Siéntete libre de probar diferentes modelos que hayas instalado.
 
 ### Interfaz principal
-<p align="center">
-<img style="width:100%; height:100%;" src="https://raw.githubusercontent.com/YonierGM/imagenes-proyecto/refs/heads/master/home-rag.png?raw=true"/>
-</p>
+![Inicio-App](images/inicio-app.png)
 
 ### embeddings y borrado
-<p align="center">
-<img style="width:100%; height:100%;" src="https://raw.githubusercontent.com/YonierGM/imagenes-proyecto/refs/heads/master/settings.png?raw=true"/>
-</p>
+![Configuraciones](images/Configuraciones.png)
 
