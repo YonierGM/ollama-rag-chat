@@ -15,14 +15,14 @@ Este proyecto implementa una API local de Recuperación Aumentada por Generació
 
 ## 🚀 Funcionalidades principales
 
-✅ Ingesta de documentos (.pdf, .docx, .txt)
-✅ Fragmentación automática de texto (con RecursiveCharacterTextSplitter)
-✅ Indexación en base vectorial con embeddings (mxbai-embed-large)
-✅ Recuperación contextual con búsqueda MMR
-✅ Generación de respuestas enriquecidas con contexto y memoria
-✅ Soporte multi-modelo: puedes elegir entre distintos modelos Ollama
-✅ Endpoints para listar, resetear y gestionar historial
-✅ Documentación automática con Swagger UI
+- ✅ Ingesta de documentos (.pdf, .docx, .txt)
+- ✅ Fragmentación automática de texto (con RecursiveCharacterTextSplitter)
+- ✅ Indexación en base vectorial con embeddings (mxbai-embed-large)
+- ✅ Recuperación contextual con búsqueda MMR
+- ✅ Generación de respuestas enriquecidas con contexto y memoria
+- ✅ Soporte multi-modelo: puedes elegir entre distintos modelos Ollama
+- ✅ Endpoints para listar, resetear y gestionar historial
+- ✅ Documentación automática con Swagger UI
 
 ## Endpoints principales
 - `POST /ingest`: Subida y fragmentación de documentos
@@ -41,7 +41,6 @@ Este proyecto implementa una API local de Recuperación Aumentada por Generació
 - Gestión de prompts y memoria contextual: LangChain
 
 ---
-
 
 ## 🚀 Paso a paso para levantar el proyecto
 
