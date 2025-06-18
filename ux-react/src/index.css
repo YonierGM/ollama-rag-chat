@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+strong {
+  font-weight: 600;
+}
+
+.home > ol,
+.home > ul {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home > li {
+  list-style: disc;
+}
