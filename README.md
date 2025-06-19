@@ -7,7 +7,7 @@ Este proyecto implementa una API local de Recuperación Aumentada por Generació
 - 🦙 **Ollama** para correr modelos LLM y de embeddings localmente
 - 🧠 **ChromaDB** como base vectorial para recuperación semántica
 - 🐳 **Docker Compose** para contenerizar todo
-- 🌐 **Redis** para almacenamiento temporal del historial de conversación.
+- 🌐 **Redis** para almacenamiento del historial de conversación.
 
 ## 🐳 Requisitos previos
 - [Docker](https://www.docker.com/)
